@@ -1,0 +1,14 @@
+{% extends "TechnoStyleApp/base.html" %}
+{% load static %}
+
+{%block seccion1%}
+
+<form action="" method="POST" class="container">
+    {% csrf_token %}
+    <h1>Buscador de Productos</h1>
+    <table>
+        {{ miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+{%endblock seccion1%}
