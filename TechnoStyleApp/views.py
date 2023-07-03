@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import articulo, clientes
 from TechnoStyleApp.forms import * 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 
 def inicio(request):
     return render(request, 'TechnoStyleApp/index.html')
+
+def caracteristicas(request):
+    return render(request, 'TechnoStyleApp/caracteristicas.html')
 
 def agregar_producto(request):
     if request.method == "POST":
@@ -53,3 +58,17 @@ def buscar_productos(request):
     else:
         miFormulario = BuscaProductos()
         return render(request, 'TechnoStyleApp/buscar_productos.html', {'miFormulario': miFormulario})
+
+def registrarUsuario(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user=authenticate(username=username, password=password)
+            login(request,user)
+            return redirect('inicio')
+    else:
+        form = UserCreationForm()
+        return render(request, 'registration/register.html', {'form': form})

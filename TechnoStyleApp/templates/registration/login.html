@@ -1,0 +1,15 @@
+{% extends "TechnoStyleApp/base.html" %}
+{% load static %}
+
+{%block seccion1%}
+<div class="container">
+    <h1>Login</h1>
+    <form method="POST" action="{% url 'login' %}">
+        {%csrf_token%}
+        {{form}}
+        <input type="submit" value="Iniciar Sesion">
+    </form>
+    <p>Si aún no estas registrado, hace click <i><a href="{%url 'register' %}">acá</a></i></p>
+</div>
+
+{%endblock seccion1%}

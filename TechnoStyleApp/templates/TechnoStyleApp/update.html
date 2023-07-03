@@ -1,0 +1,11 @@
+{% extends "TechnoStyleApp/base.html" %}
+{% load static %}
+
+{%block seccion1%}
+
+<form method="POST" class="container" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Actualizar">
+</form>
+{%endblock seccion1%}

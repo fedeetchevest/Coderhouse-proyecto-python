@@ -1,0 +1,11 @@
+{% extends "TechnoStyleApp/base.html" %}
+{% load static %}
+
+{%block seccion1%}
+
+<form method="POST">
+    {% csrf_token %}
+    <h1>Estas seguro/a que deseas borrar: {{ object }} ?</h1>
+    <input type="submit" value="Borrar">
+</form>
+{%endblock seccion1%}
