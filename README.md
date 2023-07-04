@@ -20,4 +20,4 @@ Para ingresar como usuario normal:
 - pass: coder123
 
 ### Video donde se puede observar brevemente las funcionalidades de la App.
-[Proyecto Final]([https://www.example.com](https://drive.google.com/file/d/1xZYnXnY9DGi8S6S1tlR-UKao7GJJ7_AG/view?usp=sharing)https://drive.google.com/file/d/1xZYnXnY9DGi8S6S1tlR-UKao7GJJ7_AG/view?usp=sharing)
+[Proyecto Final](https://drive.google.com/file/d/1xZYnXnY9DGi8S6S1tlR-UKao7GJJ7_AG/view?usp=sharing)
