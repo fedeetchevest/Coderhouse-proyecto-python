@@ -20,15 +20,20 @@
                         </div>
                     </div>
                     <!-- Product actions-->
-                    {% if user.is_authenticated%}
+                    {% if request.user.is_superuser %}
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'caracteristicas' prod.id%}">Ver más!</a></div>
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'Update' prod.id%}">Editar</a></div>
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'Delete' prod.id%}">Borrar</a></div>
                     </div>
+                    {%endif%}
+
+                    {% if user.is_authenticated %}
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'caracteristicas' prod.id%}">Ver más!</a></div>
+                    </div>
                     {%else%}
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'login' %}">Ver más!</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'login' %}">Iniciar sesion para ver mas!</a></div>
                     </div>
                     {%endif%}
                     
